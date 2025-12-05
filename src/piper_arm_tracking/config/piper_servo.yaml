@@ -1,0 +1,59 @@
+# piper_servo.yaml
+# FLAT STRUCTURE - NO HEADERS
+
+# *** CRITICAL: Robot configuration ***
+moveit_servo.move_group_name: arm
+moveit_servo.planning_frame: base_link
+moveit_servo.ee_frame_name: gripper_base
+moveit_servo.robot_link_command_frame: base_link
+
+# Incoming commands
+moveit_servo.command_in_type: speed_units
+moveit_servo.cartesian_command_in_topic: ~/delta_twist_cmds
+moveit_servo.joint_command_in_topic: ~/delta_joint_cmds
+
+# Scaling
+moveit_servo.scale.linear: 1.0
+moveit_servo.scale.rotational: 1.0
+moveit_servo.scale.joint: 1.0
+moveit_servo.override_velocity_scaling_factor: 1.0
+
+# Outgoing commands
+moveit_servo.command_out_topic: /servo_joint_trajectory
+moveit_servo.command_out_type: trajectory_msgs/JointTrajectory
+moveit_servo.publish_period: 0.01
+
+# Publishing settings
+moveit_servo.publish_joint_positions: true
+moveit_servo.publish_joint_velocities: true
+moveit_servo.publish_joint_accelerations: false
+moveit_servo.low_latency_mode: false
+
+# Joint state source
+moveit_servo.joint_topic: /joint_states
+
+# Scene Monitor
+moveit_servo.is_primary_planning_scene_monitor: true
+moveit_servo.monitored_planning_scene_topic: /planning_scene
+
+# Stop behaviour
+moveit_servo.incoming_command_timeout: 0.1
+moveit_servo.num_outgoing_halt_msgs_to_publish: 4
+moveit_servo.halt_all_joints_in_joint_mode: false
+moveit_servo.halt_all_joints_in_cartesian_mode: false
+
+# Singularity
+moveit_servo.lower_singularity_threshold: 500.0
+moveit_servo.hard_stop_singularity_threshold: 1000.0
+moveit_servo.joint_limit_margin: 0.1
+moveit_servo.leaving_singularity_threshold_multiplier: 1.0
+
+# Collision checking
+moveit_servo.check_collisions: false
+moveit_servo.collision_check_rate: 10.0
+moveit_servo.self_collision_proximity_threshold: 0.01
+moveit_servo.scene_collision_proximity_threshold: 0.02
+moveit_servo.collision_distance_safety_factor: 1.0
+moveit_servo.min_allowable_collision_distance: 0.0
+
+

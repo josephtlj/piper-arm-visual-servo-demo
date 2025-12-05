@@ -1,0 +1,20 @@
+# colcon workspace build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Model weights (downloaded, not committed)
+*.pt
+
+# Editors
+.vscode/
+.idea/
+.launch/
+
+# Misc
+*.log
